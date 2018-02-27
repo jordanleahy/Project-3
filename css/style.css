@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Helvetica, arial, sans-serif;
+  font-family:'Merriweather', serif;
   line-height: 1.6;
   color: #384047;
   font-size: 1em;
@@ -41,6 +41,10 @@ p {
   text-align: center;
 }
 
+header {
+  text-align: center;
+}
+
 
 
 
@@ -58,19 +62,15 @@ p {
 
  /* ---- Header ---- */
 
-header {
-  text-align: center;
-}
 
 .line{
-  width: 80%;
+  width: 85%;
   border: none;
   color: #374957;
-  background-color: #374957;
 }
 
 .heavy{
-  margin-top: 10px 0 0 0;
+  margin-top: 10px;
   height: 5px;
 }
 
@@ -92,7 +92,7 @@ input[type="number"],
 input[type="search"],
 input[type="tel"],
 select {
-  background: rgba(255,255,255,0.1);
+  background: rgba(177,58,73,1);
   border: none;
   font-size: 16px;
   height: auto;
@@ -100,11 +100,35 @@ select {
   outline: 0;
   padding: 10px;
   width: 100%;
-  background-color: #e8eeef;
+  background-color: rgba(78,187,181,0.1);
   color: #8a97a0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
   margin-bottom: 30px;
   border-radius: 8px;
+  transition: all .5s ease-out;
+}
+
+input[placeholder="Required"] {
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 4px;
+
+}
+
+input[placeholder="Required"]:valid {
+
+  background: url(../images/mark.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  border: green 1px solid;
+}
+
+/*Add :focus states to the form for when a user clicks or tabs into a text field.*/
+input[type="text"]:focus {
+  outline: 0;
+  border: 1px solid #4EBBB5;
 }
 
 textarea {
@@ -123,18 +147,12 @@ textarea {
   border-radius: 8px;
 }
 
-/** Question about size: When I size the text, the overbox shrinks **/
-input[placeholder="Required"] {
-  text-align: right;
-  font-size: 16px;
-  font-style: italic;
-
-}
 
 input[type="radio"],
 input[type="checkbox"] {
   margin: 5px 4px 5px 10px;
 }
+
 
 label {
   display: flex;
@@ -176,9 +194,27 @@ button {
   margin-bottom: 10px;
 }
 
+.number {
+  background-color: #4EBBB5;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 1em;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
 
 #zipcode {
   width: 50%;
+}
+
+input[type="checkbox"]:active,
+input[type="radio"]:valid {
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -194,17 +230,19 @@ button {
     justify-content: space-between;
   }
 
-
-/** Date: 2/23/18 Need Help Getting Zip code Label and Label Input flush with above **/
   div label {
     width: 200px;
   }
 
+  .zip {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
 
-  #zipcode {
-    width: 163px;
-    margin-right: auto;
-    align-self: flex-start;
+  .line {
+    width: 95%;
+    max-width: 1020px;
   }
 
 }
