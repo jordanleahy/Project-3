@@ -64,18 +64,17 @@ header {
 
 .line{
   width: 85%;
-  border: none;
-  color: #374957;
+  border: solid 1px black;
+  background: black;
 }
 
 .heavy{
   margin-top: 10px;
-  height: 5px;
+  height: 2px;
 }
 
 .light {
   margin-bottom: 10px;
-  height: 2px;
 }
 
 /* ---- Main/Form ---- */
